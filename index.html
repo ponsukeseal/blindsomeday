@@ -15,48 +15,37 @@
       min-height: 100vh;
       margin: 0;
       text-align: center;
-      cursor: pointer; /* encourages user click */
+      cursor: pointer; 
     }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 1em;
-    }
-    p {
-      font-size: 1.2em;
-      max-width: 600px;
-      line-height: 1.5em;
-      margin: 0.5em 0;
-    }
-    .glitch {
-      color: #ff00ff;
-      animation: flicker 1.5s infinite alternate;
-    }
+    h1 { font-size: 2em; margin-bottom: 1em; }
+    p { font-size: 1.2em; max-width: 600px; line-height: 1.5em; margin: 0.5em 0; }
+    .glitch { color: #ff00ff; animation: flicker 1.5s infinite alternate; }
     @keyframes flicker {
       0% { opacity: 1; }
       50% { opacity: 0.5; transform: translateX(2px); }
       100% { opacity: 1; transform: translateX(-2px); }
     }
-    .image-container {
-      position: relative;
-      display: inline-block;
-      margin: 1em 0;
-    }
+
+    .image-container { position: relative; display: inline-block; margin: 1em 0; }
     .hidden-letter {
       position: absolute;
-      color: #ff00ff;
+      color: #eee; /* almost blends with text, subtle */
       font-size: 32px;
-      opacity: 0.3;
+      opacity: 0.15; /* very faint */
       font-weight: bold;
       user-select: none;
+      animation: letterFlicker 2s infinite alternate;
     }
-    .hint {
-      font-size: 0.9em;
-      color: #888;
+    @keyframes letterFlicker {
+      0% { opacity: 0.1; transform: translateX(0); }
+      25% { opacity: 0.18; transform: translateX(1px); }
+      50% { opacity: 0.12; transform: translateX(-1px); }
+      75% { opacity: 0.2; transform: translateX(0); }
+      100% { opacity: 0.15; transform: translateX(1px); }
     }
-    img {
-      max-width: 400px;
-      display: block;
-    }
+
+    .hint { font-size: 0.9em; color: #888; }
+    img { max-width: 400px; display: block; }
   </style>
 </head>
 <body>
@@ -99,7 +88,7 @@
   <script>
     document.body.addEventListener('click', function() {
       const audio = document.getElementById('bgm');
-      audio.play(); // play audio after click
+      audio.play();
 
       // reveal images gradually
       setTimeout(() => { document.getElementById('clue1').style.display = 'block'; }, 4000);
@@ -108,12 +97,12 @@
 
       // remove the hint text
       document.querySelector('.hint').style.display = 'none';
-    }, { once: true }); // only trigger once
+    }, { once: true });
   </script>
 
   <!-- Hidden hints in HTML comments -->
-  <!-- Players must collect letters from images to spell "darkpath" -->
-  <!-- Then they can go to the next GitHub repo: https://github.com/ponsukeseal/darkpath -->
+  <!-- Letters from images spell "darkpath" -->
+  <!-- Next step: https://github.com/ponsukeseal/darkpath -->
 
 </body>
 </html>
