@@ -32,8 +32,8 @@
       font-size: 32px;
       font-weight: bold;
       user-select: none;
-      opacity: 0.3; /* subtle but noticeable */
-      color: rgba(240,240,240,0.3); /* slightly bright for contrast */
+      opacity: 0.3; /* subtle but visible */
+      color: rgba(240,240,240,0.3);
     }
     .hint { font-size: 0.9em; color: #888; font-style: italic; }
     img { max-width: 400px; display: block; }
@@ -54,7 +54,7 @@
   <p class="glitch">Look carefully. The answers are hidden in plain sight.</p>
   <p class="hint">Click anywhere to start the experience.</p>
 
-  <!-- Images with letters of "darkpath" scattered across images -->
+  <!-- Images with letters of "darkpath" scattered -->
   <div class="image-container" id="clue1" style="display:none;">
     <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame001.jpg">
     <span class="hidden-letter" style="top: 12%; left: 18%;">d</span>
@@ -82,21 +82,19 @@
       const audio = document.getElementById('bgm');
       audio.play();
 
-      // reveal images gradually
       setTimeout(() => { document.getElementById('clue1').style.display = 'block'; }, 4000);
       setTimeout(() => { document.getElementById('clue2').style.display = 'block'; }, 8000);
       setTimeout(() => { document.getElementById('clue3').style.display = 'block'; }, 12000);
 
-      // remove the initial hint text
       document.querySelector('.hint').style.display = 'none';
     }, { once: true });
   </script>
 
-  <!-- Hints at the bottom -->
+  <!-- Hints -->
   <p class="hint">Trace the shadows… unscramble the darkness.</p>
   <p class="hint">After purifying it, you must ascend further to the ____ ____.</p>
 
-  <!-- Hidden hints in HTML comments -->
+  <!-- Hidden hints in comments -->
   <!-- Letters from images spell "darkpath" -->
   <!-- Next step: https://github.com/ponsukeseal/darkpath -->
 
