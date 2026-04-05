@@ -15,6 +15,7 @@
       min-height: 100vh;
       margin: 0;
       text-align: center;
+      cursor: pointer; /* indicates user should click */
     }
     h1 {
       font-size: 2em;
@@ -39,12 +40,16 @@
       max-width: 400px;
       margin: 1em 0;
     }
+    .hint {
+      font-size: 0.9em;
+      color: #888;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Background music -->
-  <audio autoplay loop>
+  <!-- Background music, initially paused -->
+  <audio id="bgm" loop>
     <source src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/flashback.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
@@ -54,17 +59,27 @@
   <p class="glitch">the ones who find the truth will end up blind someday</p>
   <p>Welcome… you’re already too far in</p>
   <p class="glitch">Look carefully. The answers are hidden in plain sight.</p>
+  <p class="hint">Click anywhere to start the experience.</p>
 
   <!-- Hidden images as clues -->
   <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame001.jpg" id="clue1" style="display:none;">
   <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame002.jpg" id="clue2" style="display:none;">
   <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame003.jpg" id="clue3" style="display:none;">
 
-  <!-- Reveal images gradually -->
+  <!-- Reveal images and start audio on first click -->
   <script>
-    setTimeout(() => { document.getElementById('clue1').style.display = 'block'; }, 4000);
-    setTimeout(() => { document.getElementById('clue2').style.display = 'block'; }, 8000);
-    setTimeout(() => { document.getElementById('clue3').style.display = 'block'; }, 12000);
+    document.body.addEventListener('click', function() {
+      const audio = document.getElementById('bgm');
+      audio.play(); // play audio after click
+
+      // reveal images gradually
+      setTimeout(() => { document.getElementById('clue1').style.display = 'block'; }, 4000);
+      setTimeout(() => { document.getElementById('clue2').style.display = 'block'; }, 8000);
+      setTimeout(() => { document.getElementById('clue3').style.display = 'block'; }, 12000);
+
+      // remove the hint text
+      document.querySelector('.hint').style.display = 'none';
+    }, { once: true }); // only trigger once
   </script>
 
   <!-- Hidden hints in HTML comments -->
