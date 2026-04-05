@@ -15,7 +15,7 @@
       min-height: 100vh;
       margin: 0;
       text-align: center;
-      cursor: pointer; /* indicates user should click */
+      cursor: pointer; /* encourages user click */
     }
     h1 {
       font-size: 2em;
@@ -36,19 +36,32 @@
       50% { opacity: 0.5; transform: translateX(2px); }
       100% { opacity: 1; transform: translateX(-2px); }
     }
-    img {
-      max-width: 400px;
+    .image-container {
+      position: relative;
+      display: inline-block;
       margin: 1em 0;
+    }
+    .hidden-letter {
+      position: absolute;
+      color: #ff00ff;
+      font-size: 32px;
+      opacity: 0.3;
+      font-weight: bold;
+      user-select: none;
     }
     .hint {
       font-size: 0.9em;
       color: #888;
     }
+    img {
+      max-width: 400px;
+      display: block;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Background music, initially paused -->
+  <!-- Background music -->
   <audio id="bgm" loop>
     <source src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/flashback.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
@@ -61,10 +74,26 @@
   <p class="glitch">Look carefully. The answers are hidden in plain sight.</p>
   <p class="hint">Click anywhere to start the experience.</p>
 
-  <!-- Hidden images as clues -->
-  <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame001.jpg" id="clue1" style="display:none;">
-  <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame002.jpg" id="clue2" style="display:none;">
-  <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame003.jpg" id="clue3" style="display:none;">
+  <!-- Images with hidden letters spelling "darkpath" -->
+  <div class="image-container" id="clue1" style="display:none;">
+    <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame001.jpg">
+    <span class="hidden-letter" style="top: 15%; left: 20%;">d</span>
+  </div>
+
+  <div class="image-container" id="clue2" style="display:none;">
+    <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame002.jpg">
+    <span class="hidden-letter" style="top: 10%; left: 25%;">a</span>
+  </div>
+
+  <div class="image-container" id="clue3" style="display:none;">
+    <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame003.jpg">
+    <span class="hidden-letter" style="top: 20%; left: 30%;">r</span>
+    <span class="hidden-letter" style="top: 35%; left: 35%;">k</span>
+    <span class="hidden-letter" style="top: 50%; left: 40%;">p</span>
+    <span class="hidden-letter" style="top: 65%; left: 45%;">a</span>
+    <span class="hidden-letter" style="top: 75%; left: 50%;">t</span>
+    <span class="hidden-letter" style="top: 85%; left: 55%;">h</span>
+  </div>
 
   <!-- Reveal images and start audio on first click -->
   <script>
@@ -83,10 +112,8 @@
   </script>
 
   <!-- Hidden hints in HTML comments -->
-  <!-- Each image contains a subtle clue. Inspect carefully for the next step. -->
-  <!-- Forest → Haunted House → Apartment side. Letters in order form the next key. -->
+  <!-- Players must collect letters from images to spell "darkpath" -->
+  <!-- Then they can go to the next GitHub repo: https://github.com/ponsukeseal/darkpath -->
 
 </body>
 </html>
-
-
