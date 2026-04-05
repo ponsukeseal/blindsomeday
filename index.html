@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Ones Who Find the Truth</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #eee;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+    p {
+      font-size: 1.2em;
+      max-width: 600px;
+      line-height: 1.5em;
+      margin: 0.5em 0;
+    }
+    .glitch {
+      color: #ff00ff;
+      animation: flicker 1.5s infinite alternate;
+    }
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; transform: translateX(2px); }
+      100% { opacity: 1; transform: translateX(-2px); }
+    }
+    img {
+      max-width: 400px;
+      margin: 1em 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="audio/flashback.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Landing text -->
+  <h1>The Ones Who Find the Truth</h1>
+  <p class="glitch">the ones who find the truth will end up blind someday</p>
+  <p>Welcome… you’re already too far in</p>
+  <p class="glitch">Look carefully. The answers are hidden in plain sight.</p>
+
+  <!-- Hidden images as clues -->
+  <img src="images/frame001.jpg" id="clue1" style="display:none;">
+  <img src="images/frame002.jpg" id="clue2" style="display:none;">
+  <img src="images/frame003.jpg" id="clue3" style="display:none;">
+
+  <!-- Reveal images gradually -->
+  <script>
+    setTimeout(() => { document.getElementById('clue1').style.display = 'block'; }, 4000);
+    setTimeout(() => { document.getElementById('clue2').style.display = 'block'; }, 8000);
+    setTimeout(() => { document.getElementById('clue3').style.display = 'block'; }, 12000);
+  </script>
+
+  <!-- Hidden hint in HTML comments -->
+  <!-- Each image contains a subtle clue. Inspect carefully for the next step. -->
+
+</body>
+</html>
