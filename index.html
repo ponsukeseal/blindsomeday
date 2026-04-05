@@ -32,7 +32,8 @@
       font-size: 32px;
       font-weight: bold;
       user-select: none;
-      opacity: 0.12; /* subtle transparency */
+      opacity: 0.3; /* noticeable but subtle */
+      color: rgba(240,240,240,0.3); /* slightly bright for contrast */
     }
     .hint { font-size: 0.9em; color: #888; }
     img { max-width: 400px; display: block; }
@@ -53,25 +54,25 @@
   <p class="glitch">Look carefully. The answers are hidden in plain sight.</p>
   <p class="hint">Click anywhere to start the experience.</p>
 
-  <!-- Images with blended letters spelling "darkpath" scrambled -->
+  <!-- Images with letters of "darkpath" scrambled and subtly blended -->
   <div class="image-container" id="clue1" style="display:none;">
     <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame001.jpg">
-    <span class="hidden-letter" style="top: 12%; left: 18%; color: rgba(45,60,30,0.12);">d</span>
-    <span class="hidden-letter" style="top: 50%; left: 70%; color: rgba(50,70,40,0.12);">a</span>
+    <span class="hidden-letter" style="top: 12%; left: 18%;">d</span>
+    <span class="hidden-letter" style="top: 50%; left: 70%;">a</span>
   </div>
 
   <div class="image-container" id="clue2" style="display:none;">
     <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame002.jpg">
-    <span class="hidden-letter" style="top: 15%; left: 25%; color: rgba(40,60,35,0.12);">r</span>
-    <span class="hidden-letter" style="top: 55%; left: 40%; color: rgba(50,70,40,0.12);">k</span>
-    <span class="hidden-letter" style="top: 75%; left: 55%; color: rgba(45,65,38,0.12);">p</span>
+    <span class="hidden-letter" style="top: 15%; left: 25%;">r</span>
+    <span class="hidden-letter" style="top: 55%; left: 40%;">k</span>
+    <span class="hidden-letter" style="top: 75%; left: 55%;">p</span>
   </div>
 
   <div class="image-container" id="clue3" style="display:none;">
     <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame003.jpg">
-    <span class="hidden-letter" style="top: 25%; left: 20%; color: rgba(40,40,40,0.12);">a</span>
-    <span class="hidden-letter" style="top: 50%; left: 35%; color: rgba(50,50,50,0.12);">t</span>
-    <span class="hidden-letter" style="top: 80%; left: 50%; color: rgba(55,55,55,0.12);">h</span>
+    <span class="hidden-letter" style="top: 25%; left: 20%;">a</span>
+    <span class="hidden-letter" style="top: 50%; left: 35%;">t</span>
+    <span class="hidden-letter" style="top: 80%; left: 50%;">h</span>
   </div>
 
   <!-- Reveal images and start audio on first click -->
@@ -96,3 +97,4 @@
 
 </body>
 </html>
+
