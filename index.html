@@ -32,10 +32,10 @@
       font-size: 32px;
       font-weight: bold;
       user-select: none;
-      opacity: 0.3; /* noticeable but subtle */
+      opacity: 0.3; /* subtle but noticeable */
       color: rgba(240,240,240,0.3); /* slightly bright for contrast */
     }
-    .hint { font-size: 0.9em; color: #888; }
+    .hint { font-size: 0.9em; color: #888; font-style: italic; }
     img { max-width: 400px; display: block; }
   </style>
 </head>
@@ -54,25 +54,25 @@
   <p class="glitch">Look carefully. The answers are hidden in plain sight.</p>
   <p class="hint">Click anywhere to start the experience.</p>
 
-  <!-- Images with letters of "darkpath" scrambled and subtly blended -->
+  <!-- Images with letters of "darkpath" scattered across images -->
   <div class="image-container" id="clue1" style="display:none;">
     <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame001.jpg">
-    <span class="hidden-letter" style="top: 12%; left: 18%;">d</span>
-    <span class="hidden-letter" style="top: 50%; left: 70%;">a</span>
+    <span class="hidden-letter" style="top: 10%; left: 20%;">p</span>
+    <span class="hidden-letter" style="top: 40%; left: 50%;">d</span>
+    <span class="hidden-letter" style="top: 70%; left: 30%;">t</span>
   </div>
 
   <div class="image-container" id="clue2" style="display:none;">
     <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame002.jpg">
-    <span class="hidden-letter" style="top: 15%; left: 25%;">r</span>
-    <span class="hidden-letter" style="top: 55%; left: 40%;">k</span>
-    <span class="hidden-letter" style="top: 75%; left: 55%;">p</span>
+    <span class="hidden-letter" style="top: 25%; left: 30%;">a</span>
+    <span class="hidden-letter" style="top: 60%; left: 45%;">h</span>
   </div>
 
   <div class="image-container" id="clue3" style="display:none;">
     <img src="https://raw.githubusercontent.com/ponsukeseal/blindsomeday/main/frame003.jpg">
-    <span class="hidden-letter" style="top: 25%; left: 20%;">a</span>
-    <span class="hidden-letter" style="top: 50%; left: 35%;">t</span>
-    <span class="hidden-letter" style="top: 80%; left: 50%;">h</span>
+    <span class="hidden-letter" style="top: 20%; left: 30%;">r</span>
+    <span class="hidden-letter" style="top: 50%; left: 40%;">k</span>
+    <span class="hidden-letter" style="top: 80%; left: 50%;">a</span>
   </div>
 
   <!-- Reveal images and start audio on first click -->
@@ -86,10 +86,14 @@
       setTimeout(() => { document.getElementById('clue2').style.display = 'block'; }, 8000);
       setTimeout(() => { document.getElementById('clue3').style.display = 'block'; }, 12000);
 
-      // remove the hint text
+      // remove the initial hint text
       document.querySelector('.hint').style.display = 'none';
     }, { once: true });
   </script>
+
+  <!-- Hints at the bottom -->
+  <p class="hint">Trace the shadows… unscramble the darkness.</p>
+  <p class="hint">After purifying it, you must ascend further to the ____ ____.</p>
 
   <!-- Hidden hints in HTML comments -->
   <!-- Letters from images spell "darkpath" -->
@@ -97,4 +101,3 @@
 
 </body>
 </html>
-
